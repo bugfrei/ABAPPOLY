@@ -8,13 +8,13 @@ Polymorphism in object-oriented programming is the ability of different objects 
 3 classes:
 
 1. base class (abstract)
-protected variable itemtype
-protected method init (set itemtype = 'BASE')
-constructor (calls init)
+- protected variable itemtype
+- protected method init (set itemtype = 'BASE')
+- constructor (calls init)
 
 2. subclass “first”, inherits from baseclass
-redefinition of method init (set itemtype = 'first')
-constructor (calls super constructor)
+- redefinition of method init (set itemtype = 'first')
+- constructor (calls super constructor)
 
 3. subclass “seconds”, same like “first” but init set itemtype = 'second'
 
