@@ -1,0 +1,41 @@
+CLASS zcl_09first DEFINITION
+  PUBLIC
+  INHERITING FROM zcl_09base
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+    METHODS:
+        CONSTRUCTOR
+          IMPORTING
+            defaultvalue TYPE i,
+         publicPolyTest REDEFINITION.
+  PROTECTED SECTION.
+    METHODS:
+        init REDEFINITION,
+        polytest REDEFINITION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zcl_09first IMPLEMENTATION.
+  METHOD constructor.
+
+    super->constructor( defaultvalue = defaultvalue ).
+
+  ENDMETHOD.
+
+
+  METHOD init.
+    ME->itemtype = 'FIRST'.
+  ENDMETHOD.
+
+  METHOD polytest.
+    out->write( 'POLYTEST: FIRST' ).
+  ENDMETHOD.
+
+  METHOD publicpolytest.
+    out->write( 'PUBLIC POLYTEST: FIRST' ).
+  ENDMETHOD.
+ENDCLASS.

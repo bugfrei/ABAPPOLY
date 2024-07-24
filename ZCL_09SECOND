@@ -1,0 +1,43 @@
+CLASS zcl_09second DEFINITION
+  PUBLIC
+  INHERITING FROM zcl_09base
+  FINAL
+  CREATE PUBLIC .
+
+  PUBLIC SECTION.
+    METHODS:
+        CONSTRUCTOR
+          IMPORTING
+            defaultvalue TYPE i,
+        publicPolyTest REDEFINITION.
+
+  PROTECTED SECTION.
+    METHODS:
+        init REDEFINITION,
+        polytest REDEFINITION.
+  PRIVATE SECTION.
+ENDCLASS.
+
+
+
+CLASS zcl_09second IMPLEMENTATION.
+  METHOD constructor.
+
+    super->constructor( defaultvalue = defaultvalue ).
+
+  ENDMETHOD.
+
+
+  METHOD init.
+    ME->itemtype = 'SECOND'.
+  ENDMETHOD.
+
+  METHOD polytest.
+    out->write( 'POLYTEST: SECOND' ).
+  ENDMETHOD.
+
+  METHOD publicpolytest.
+    out->write( 'PUBLIC POLYTEST: SECOND' ).
+  ENDMETHOD.
+
+ENDCLASS.
